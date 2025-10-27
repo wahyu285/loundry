@@ -56,18 +56,14 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'muhammadaryaalfajar@gmail.com'
-EMAIL_HOST_PASSWORD = 'owak akui ywpg yphr'  # gunakan App Password (bukan password Gmail biasa)
+EMAIL_HOST_PASSWORD = 'owak akui ywpg yphr'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 AUTH_USER_MODEL = 'accounts.User'
 
-MIDTRANS = {
-    "SERVER_KEY": "Mid-server-Lm05qJezbuyVxaPZsgEQRzst",
-    "CLIENT_KEY": "Mid-client-wVEVPaodnVMivf8e",
-    "IS_PRODUCTION": False,
-}
-
+MIDTRANS_SERVER_KEY = os.getenv("MIDTRANS_SERVER_KEY")
+MIDTRANS_CLIENT_KEY = os.getenv("MIDTRANS_CLIENT_KEY")
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
