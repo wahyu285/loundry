@@ -65,6 +65,12 @@ AUTH_USER_MODEL = 'accounts.User'
 MIDTRANS_SERVER_KEY = os.getenv("MIDTRANS_SERVER_KEY")
 MIDTRANS_CLIENT_KEY = os.getenv("MIDTRANS_CLIENT_KEY")
 
+MIDTRANS = {
+    "IS_PRODUCTION": os.getenv("MIDTRANS_IS_PRODUCTION", "False").lower() == "true",
+    "SERVER_KEY": MIDTRANS_SERVER_KEY,
+    "CLIENT_KEY": MIDTRANS_CLIENT_KEY,
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
